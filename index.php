@@ -12,8 +12,7 @@
         <form>
             <select name="orderBy">
                 <option value="">Select One</option>
-                <option value="highToLow">High to Low</option>
-                <option value="lowToHigh">Low to High</option>
+                <option value="vehiclePrice">Price</option>
                 <option value="vehicleSize">Size</option>
                 <option value="vehicleType">Type</option>
                 <option value="vehicleYear">Year</option>
