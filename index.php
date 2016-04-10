@@ -32,6 +32,24 @@
             <br />
             <input type="submit" value="Search Products">
         </form>
+        
+        <?php
+        
+         $allVehicles = getAllVehicles();
+         foreach ($allVehicles as $vehicle) {
+             
+             echo "<a href='vehicleInfo.php?productId=".$vehicle['vehicleId']."'>";
+             echo $vehicle['vehicleMake'] . " " . $vehicle['vehicleModel'] . "</a>";
+             
+             echo "<form action='shoppingCart.php'>";
+             echo  "<input type='hidden' name='vehicleId' value=".$vehicle['vehicleId'].">";
+             echo  "<input type='submit' value='Add to cart'>";
+             echo "</form>";
+             echo "<br />";
+             
+         }
+        
+        ?>
 
     </body>
 </html>
