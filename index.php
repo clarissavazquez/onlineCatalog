@@ -29,6 +29,7 @@
             <label for="ASC">Ascending</label>
             <input type="radio" name="sortBy" value="DESC" id="DESC" checked> 
             <label for="DESC">Descending</label>
+            <br />
             <input type="submit" value="Search Products">
         </form>
 
