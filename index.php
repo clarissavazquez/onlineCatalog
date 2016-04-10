@@ -1,11 +1,17 @@
 <?php
     session_start();
-    include("../../includes/database.php");
+    include("includes/database.php");
     $dbConnection = getDatabaseConnection('auto_sale');
     
     function sortTable()
     {
-        
+        global $dbConnection;
+        $sql = "SELECT * FROM productType";
+        $statement = $dbConnection->prepare($sql);
+        $statement->execute();
+        $records = $statement->fetchAll(PDO::FETCH_ASSOC);
+        print_r($records);
+        return $records;
     }
 ?>
 
