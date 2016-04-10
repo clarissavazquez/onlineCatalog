@@ -13,6 +13,12 @@
         print_r($records);
         return $records;
     }
+    /*$dbConnection = getDatabaseConnection('auto_sale');
+    
+    function sortTable()
+    {
+        
+    }*/
 ?>
 
 <!DOCTYPE html>
@@ -30,10 +36,13 @@
                 <option value="vehicleType">Type</option>
                 <option value="vehicleYear">Year</option>
             </select>
-            In which order:
-            <input type="radio" name="sortBy" value="ASC"> Ascending <br/>
-            <input type="radio" name="sortBy" value="DESC" checked> Descending <br/>
-            <input type="submit" value="Search Products"/>
+            
+            <input type="radio" name="sortBy" value="ASC" id="ASC">  
+            <label for="ASC">Ascending</label>
+            <input type="radio" name="sortBy" value="DESC" id="DESC" checked> 
+            <label for="DESC">Descending</label>
+            <br />
+            <input type="submit" value="Search Products">
         </form>
 
     </body>
