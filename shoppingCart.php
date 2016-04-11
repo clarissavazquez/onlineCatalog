@@ -1,6 +1,8 @@
 <?php
     session_start(); //starts or resumes an existing session
     $_SESSION['errors'] = array();
+    
+    
 ?>
 
 <!DOCTYPE html>

@@ -10,7 +10,9 @@
     function getAllVehicles() {
         global $dbConnection;
         $sql = "SELECT *
-                FROM vehicle";
+                FROM vehicle AS t1
+                JOIN vehicle_type AS t2
+                WHERE t1.typeID = t2.vid";
         if(isset($_GET['searchForm'])) {
             if(!empty($_GET['orderBy'])) {
                 $sql .= " ORDER BY " . $_GET['orderBy'];
@@ -55,11 +57,18 @@
         <?php
         
          $allVehicles = getAllVehicles();
+         echo "<table border=1>";
          foreach ($allVehicles as $vehicle) {
+             echo "<tr>";
              
              echo "<a href='vehicleInfo.php?vin=".$vehicle['vin']."'>";
-             echo $vehicle['make'] . " " . $vehicle['model'] . "</a>";
-             
+             echo "<td>" . $vehicle['make'] . "</td>";
+             echo "<td>". "<a href='vehicleInfo.php?vin=".$vehicle['vin']."'>" . $vehicle['model'] . "</a></td>";
+             echo "<td>" . $vehicle['year'] . "</td>";
+             echo "<td>" . $vehicle['size'] . " seater</td>";
+             echo "<td>" . $vehicle['type'] . "</td>";
+             echo "<td>$" . $vehicle['price'] . "</td>";
+             echo "<td>";
              echo "<form action='shoppingCart.php'>";
              echo  "<input type='hidden' name='vin' value=".$vehicle['vin'].">";
              if($vehicle['vin'] == "1ZVBP8EN1A5169534") {
@@ -83,11 +92,12 @@
              echo "<img src=images/$image alt=$image height='500' width='700'/>";
              echo  "<input type='submit' value='Add to cart'>";
              echo "</form>";
-             echo "<br />";
+             echo "</td>";
              
-             
-             
+
+             echo "</tr>";
          }
+         echo "</table>"
         
         ?>
 
