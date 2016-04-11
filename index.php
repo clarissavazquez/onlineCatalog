@@ -62,9 +62,30 @@
              
              echo "<form action='shoppingCart.php'>";
              echo  "<input type='hidden' name='vin' value=".$vehicle['vin'].">";
+             if($vehicle['vin'] == "1ZVBP8EN1A5169534") {
+                 $image = "sonic.jpg";
+             }
+             else if($vehicle['vin'] == "1FDZY90T7TVA77076") {
+                 $image = "fiesta.jpg";
+             }
+             else if($vehicle['vin'] == "5GAET13M172179554") {
+                 $image = "cooper.jpg";
+             }
+             else if($vehicle['vin'] == "19UUA56782A014159") {
+                 $image = "kia.jpg";
+             }
+             else if($vehicle['vin'] == "1B7GG46N92S546100") {
+                 $image = "benz.jpg";
+             }
+             else if($vehicle['vin'] == "1G4GE5G31CF143405") {
+                 $image = "lancer.jpg";
+             }
+             echo "<img src=images/$image alt=$image height='500' width='700'/>";
              echo  "<input type='submit' value='Add to cart'>";
              echo "</form>";
              echo "<br />";
+             
+             
              
          }
         
