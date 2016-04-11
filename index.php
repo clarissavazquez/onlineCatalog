@@ -1,7 +1,7 @@
 <?php
     session_start();
     include("includes/database.php");
-    //$dbConnection = getDatabaseConnection('auto_sale');
+    $dbConnection = getDatabaseConnection('auto_sale');
     
     function sortTable() {
         
@@ -36,12 +36,12 @@
         <h1>Online Catalog</h1>
         <form>
             <select name="orderBy">
-                <option value="vehicleMake">Select One</option>
-                <option value="vehicleMake">Make</option>
-                <option value="vehiclePrice">Price</option>
-                <option value="vehicleSize">Size</option>
-                <option value="vehicleType">Type</option>
-                <option value="vehicleYear">Year</option>
+                <option value="make">Select One</option>
+                <option value="make">Make</option>
+                <option value="price">Price</option>
+                <option value="size">Size</option>
+                <option value="typeID">Type</option>
+                <option value="year">Year</option>
             </select>
             
             <input type="radio" name="sortBy" value="ASC" id="ASC">  
@@ -57,11 +57,11 @@
          $allVehicles = getAllVehicles();
          foreach ($allVehicles as $vehicle) {
              
-             echo "<a href='vehicleInfo.php?productId=".$vehicle['vehicleId']."'>";
-             echo $vehicle['vehicleMake'] . " " . $vehicle['vehicleModel'] . "</a>";
+             echo "<a href='vehicleInfo.php?vin=".$vehicle['vin']."'>";
+             echo $vehicle['make'] . " " . $vehicle['model'] . "</a>";
              
              echo "<form action='shoppingCart.php'>";
-             echo  "<input type='hidden' name='vehicleId' value=".$vehicle['vehicleId'].">";
+             echo  "<input type='hidden' name='vin' value=".$vehicle['vin'].">";
              echo  "<input type='submit' value='Add to cart'>";
              echo "</form>";
              echo "<br />";
