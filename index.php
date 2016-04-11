@@ -12,7 +12,7 @@
                 $sql .= " ORDER BY " . $_GET['orderBy'] . " ";
             }
             if(!empty($_GET['sortBy'])) {
-                $sql .= $_GET['sortBy'];
+                $sql .= " " . $_GET['sortBy'];
             }
         }
         $statement = $dbConnection->prepare($sql);
@@ -32,7 +32,7 @@
         <h1>Online Catalog</h1>
         <form>
             <select name="orderBy">
-                <option value="">Select One</option>
+                <option value="make">Select One</option>
                 <option value="make">Make</option>
                 <option value="price">Price</option>
                 <option value="size">Size</option>
@@ -52,12 +52,10 @@
         
          $allVehicles = getAllVehicles();
          foreach ($allVehicles as $vehicle) {
-             
-             echo "<a href='vehicleInfo.php?productId=".$vehicle['vehicleId']."'>";
+             echo "<a href='vehicleInfo.php?vin=".$vehicle['vin']."'>";
              echo $vehicle['make'] . " " . $vehicle['model'] . "</a>";
-             
              echo "<form action='shoppingCart.php'>";
-             echo  "<input type='hidden' name='vehicleId' value=".$vehicle['vehicleId'].">";
+             echo  "<input type='hidden' name='vin' value=".$vehicle['vin'].">";
              echo  "<input type='submit' value='Add to cart'>";
              echo "</form>";
              echo "<br />";
