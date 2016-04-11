@@ -1,12 +1,30 @@
 <?php
     session_start();
     include("includes/database.php");
-    /*$dbConnection = getDatabaseConnection('auto_sale');
+    //$dbConnection = getDatabaseConnection('auto_sale');
     
-    function sortTable()
-    {
+    function sortTable() {
         
-    }*/
+    }
+    
+    function getAllVehicles() {
+        global $dbConnection;
+        $sql = "SELECT *
+                FROM vehicle";
+        if(isset($_GET['searchForm'])) {
+            if(!empty($_GET['orderBy'])) {
+                $sql .= " ORDER BY " . $_GET['orderBy'];
+            }
+            if(!empty($_GET['sortBy'])) {
+                $sql .= $_GET['sortBy'];
+            }
+        }
+        $statement = $dbConnection->prepare($sql);
+        $statement->execute();
+        $records = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $records;
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +36,8 @@
         <h1>Online Catalog</h1>
         <form>
             <select name="orderBy">
-                <option value="">Select One</option>
+                <option value="vehicleMake">Select One</option>
+                <option value="vehicleMake">Make</option>
                 <option value="vehiclePrice">Price</option>
                 <option value="vehicleSize">Size</option>
                 <option value="vehicleType">Type</option>
@@ -30,7 +49,7 @@
             <input type="radio" name="sortBy" value="DESC" id="DESC" checked> 
             <label for="DESC">Descending</label>
             <br />
-            <input type="submit" value="Search Products">
+            <input type="submit" value="Search Products" name = "searchForm">
         </form>
         
         <?php
