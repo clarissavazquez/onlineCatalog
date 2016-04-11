@@ -16,7 +16,7 @@
                 $sql .= " ORDER BY " . $_GET['orderBy'];
             }
             if(!empty($_GET['sortBy'])) {
-                $sql .= $_GET['sortBy'];
+                $sql .= " " . $_GET['sortBy'];
             }
         }
         $statement = $dbConnection->prepare($sql);
