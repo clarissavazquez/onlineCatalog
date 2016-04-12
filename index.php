@@ -23,6 +23,13 @@
         $records = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $records;
     }
+    
+    function addToCart() {
+        if(isset($_GET['addToCart'])) {
+            array_push($_SESSION['vehicles'], $_GET['vin']);
+        }
+        print_r($_SESSION['vehicles']);
+    }
     /*
     function submitted() {
         //if(isset($_GET['submit'])) {
@@ -109,10 +116,9 @@
              echo "<form>";
              echo  "<input type='hidden' name='vin' value=" . $vehicle['vin'] . ">";
             
-             echo  "<input type='submit' value='Add to Cart'>";
+             echo  "<input type='submit' name='addToCart' value='Add to Cart'>";
              echo "</form>";
              echo "</td>";
-            
              echo "</tr>";
          }
          echo "</table>"

@@ -6,12 +6,17 @@
         $_SESSION['vehicles'] = array();
     }
     
-    print_r($_SESSION['vehicles']);
-    array_push($_SESSION['vehicles'], $_GET['vin']);
-    print_r($_SESSION['vehicles']);
-    print_r($_SESSION['vehicles']);
+    if(isset($_GET['addToCart'])) { 
+        array_push($_SESSION['vehicles'], $_GET['vin']);
+        print_r($_SESSION['vehicles']);
+    }
     
-    
+    function emptyCart() {
+        if(isset($_GET['emptyCart'])) {
+            unset($_SESSION['vehicles']);
+        }
+        print_r($_SESSION['vehicles']);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -23,8 +28,9 @@
     <body>
         <a href="index.php">Back to Main Catalog</a>
         <form>
-            <input type="submit" value="Empty Cart">
+            <input type="submit" name='emptyCart' value="Empty Cart">
         </form>
+        <?=emptyCart()?>
         <h1>Your Items:</h1>
         
     </body>
