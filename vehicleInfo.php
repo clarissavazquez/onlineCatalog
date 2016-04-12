@@ -19,6 +19,7 @@
 <html>
     <head>
         <title>Vehicle Information</title>
+        <link rel="stylesheet" href="includes/index.css" type="text/css" />
     </head>
     <body>
         <h1>Vehicle Information</h1>

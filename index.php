@@ -29,6 +29,7 @@
 <html>
     <head>
         <title>Online Catalog</title>
+        <link rel="stylesheet" href="includes/index.css" type="text/css" />
     </head>
     <body>
         <a href="https://cst336-clarissa-vazquez.c9users.io/onlineCatalog/shoppingCart.php">Go to Shopping Cart</a>
