@@ -119,6 +119,8 @@
          echo "</table>"
         
         ?>
+        
+        <a href="https://docs.google.com/a/csumb.edu/document/d/1O66wUdTV8GyMgD3XURe865LOXGdDlYnT_h2k-SB3Pn4/edit?usp=sharing" target="_blank">User Story, Database Schema, and Mockup</a>
 
     </body>
 </html>
