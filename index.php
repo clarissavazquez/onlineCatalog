@@ -2,7 +2,6 @@
     session_start();
     include("includes/database.php");
     $_SESSION['vehicles'] = array();
-    print_r($_SESSION['vehicles']);
     $dbConnection = getDatabaseConnection('auto_sale');
     
     function getAllVehicles() {
@@ -106,7 +105,7 @@
              }
              echo "<img src=images/$image alt=$image height='200' width='300'/>";
              
-             echo "<form action='test.php'>";
+             echo "<form>";
              echo  "<input type='hidden' name='vin' value=" . $vehicle['vin'] . ">";
             
              echo  "<input type='submit' value='Add to Cart'>";
