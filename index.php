@@ -1,8 +1,7 @@
 <?php
     session_start();
     include("includes/database.php");
-    $_SESSION['vehicles'] = array();
-    print_r($_SESSION['vehicles']);
+    
     $dbConnection = getDatabaseConnection('auto_sale');
     
     function getAllVehicles() {
