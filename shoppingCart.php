@@ -28,9 +28,13 @@
     <body>
         <a href="index.php">Back to Main Catalog</a>
         <form>
-            <input type="submit" name='emptyCart' value="Empty Cart">
+            <input id="emptyButton" type="submit" name='emptyCart' value="Empty Cart">
         </form>
         <?=emptyCart()?>
+        
+        <form action="index.php">
+            <input id="mainButton" type="submit" name="main" value="Back to Catalog">
+        </form>
         <h1>Your Items:</h1>
         
     </body>

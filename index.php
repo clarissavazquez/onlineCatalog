@@ -48,7 +48,6 @@
     <body>
         <a href="shoppingCart.php">Go to Shopping Cart</a>
         <h1>Online Catalog</h1>
-        <img src="images/cart.jpg"></img>
         <form>
             <select id="select" name="orderBy">
                 <option value="make">Select One</option>
