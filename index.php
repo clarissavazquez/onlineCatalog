@@ -24,12 +24,6 @@
         return $records;
     }
     
-    function addToCart() {
-        if(isset($_GET['addToCart'])) {
-            array_push($_SESSION['vehicles'], $_GET['vin']);
-        }
-        print_r($_SESSION['vehicles']);
-    }
     /*
     function submitted() {
         //if(isset($_GET['submit'])) {
