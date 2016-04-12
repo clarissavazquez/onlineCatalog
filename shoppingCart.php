@@ -57,6 +57,39 @@
                     echo "<td>" . $vehicle['make'] . "</td>";
                     echo "<td>" . "<a href='vehicleInfo.php?vin=".$vehicle['vin']."'>" . $vehicle['model'] . "</a></td>";
                     echo "<td>$" . $vehicle['price'] . "</td>";
+                    echo "<td>";
+            
+             if($vehicle['vin'] == "1ZVBP8EN1A5169534") {
+                 $image = "sonic.jpg";
+             }
+             else if($vehicle['vin'] == "1FDZY90T7TVA77076") {
+                 $image = "fiesta.jpg";
+             }
+             else if($vehicle['vin'] == "5GAET13M172179554") {
+                 $image = "cooper.jpg";
+             }
+             else if($vehicle['vin'] == "19UUA56782A014159") {
+                 $image = "kia.jpg";
+             }
+             else if($vehicle['vin'] == "1B7GG46N92S546100") {
+                 $image = "benz.jpg";
+             }
+             else if($vehicle['vin'] == "1G4GE5G31CF143405") {
+                 $image = "lancer.jpg";
+             }
+             else if($vehicle['vin'] == "3WKDDU9X16F109205") {
+                 $image = "frontier.jpg";
+             }
+             else if($vehicle['vin'] == "5HD1FR4187Y785123") {
+                 $image = "titan.jpg";
+             }
+             else if($vehicle['vin'] == "YV1MW382182462004") {
+                 $image = "versa.jpg";
+             }
+             else if($vehicle['vin'] == "1GDB4T1T4HV596313") {
+                 $image = "rav4.jpg";
+             }
+             echo "<img src=images/$image alt=$image height='200' width='300'/></td>";
                     echo "<tr>";
                 }
                 echo "</table>";
