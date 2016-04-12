@@ -1,6 +1,7 @@
 <?php
     session_start();
     include("includes/database.php");
+    $_SESSION['vehicles'] = array();
     $dbConnection = getDatabaseConnection('auto_sale');
     
     function getAllVehicles() {
@@ -21,6 +22,12 @@
         $statement->execute();
         $records = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $records;
+    }
+    
+    function submitted() {
+        //if(isset($_GET['submit'])) {
+        array_push($_SESSION['vehicles'], $_GET['submit']);
+        //}
     }
     
 ?>
@@ -99,17 +106,14 @@
              }
              echo "<img src=images/$image alt=$image height='200' width='300'/>";
              
-             echo "<form>";
-             echo  "<input type='hidden' name='vin' value=" . $vehicle['vin'] . ">";
-             echo  "<input type='submit' value='Add to cart'>";
-             if(isset($_GET['submit'])) {
-                 array_push($_SESSIONS['vehicles'], $vehicle['vin']);
-             }
+             echo "<form action='index.php'>";
+             //echo  "<input type='hidden' name='vin' value=" . $vehicle['vin'] . ">";
+             echo  "<input type='submit' value='Add to Cart'>";
              echo "</form>";
              echo "</td>";
-             
             
              echo "</tr>";
+             submitted();
          }
          echo "</table>"
         
