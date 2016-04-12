@@ -64,8 +64,7 @@
              echo "<td>" . $vehicle['type'] . "</td>";
              echo "<td>$" . $vehicle['price'] . "</td>";
              echo "<td>";
-             echo "<form action='shoppingCart.php'>";
-             echo  "<input type='hidden' name='vin' value=".$vehicle['vin'].">";
+            
              if($vehicle['vin'] == "1ZVBP8EN1A5169534") {
                  $image = "sonic.jpg";
              }
@@ -84,12 +83,28 @@
              else if($vehicle['vin'] == "1G4GE5G31CF143405") {
                  $image = "lancer.jpg";
              }
+             else if($vehicle['vin'] == "3WKDDU9X16F109205") {
+                 $image = "frontier.jpg";
+             }
+             else if($vehicle['vin'] == "5HD1FR4187Y785123") {
+                 $image = "titan.jpg";
+             }
+             else if($vehicle['vin'] == "YV1MW382182462004") {
+                 $image = "versa.jpg";
+             }
+             else if($vehicle['vin'] == "1GDB4T1T4HV596313") {
+                 $image = "rav4.jpg";
+             }
              echo "<img src=images/$image alt=$image height='500' width='700'/>";
+             
+             echo "<form action='shoppingCart.php'>";
+             echo  "<input type='hidden' name='vin' value=" . $vehicle['vin'] . ">";
+
              echo  "<input type='submit' value='Add to cart'>";
              echo "</form>";
              echo "</td>";
              
-
+            
              echo "</tr>";
          }
          echo "</table>"
