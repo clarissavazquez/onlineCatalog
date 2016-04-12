@@ -1,7 +1,7 @@
 <?php
     session_start();
     include("includes/database.php");
-    
+
     $dbConnection = getDatabaseConnection('auto_sale');
     
     function getAllVehicles() {
@@ -65,7 +65,6 @@
          echo "<table border=1>";
          foreach ($allVehicles as $vehicle) {
              echo "<tr>";
-             echo "<a href='vehicleInfo.php?vin=".$vehicle['vin']."'>";
              echo "<td>" . $vehicle['make'] . "</td>";
              echo "<td>". "<a href='vehicleInfo.php?vin=".$vehicle['vin']."'>" . $vehicle['model'] . "</a></td>";
              echo "<td>" . $vehicle['year'] . "</td>";
@@ -106,7 +105,7 @@
              }
              echo "<img src=images/$image alt=$image height='200' width='300'/>";
              
-             echo "<form action='test.php'>";
+             echo "<form>";
              echo  "<input type='hidden' name='vin' value=" . $vehicle['vin'] . ">";
             
              echo  "<input type='submit' value='Add to Cart'>";
