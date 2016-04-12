@@ -95,7 +95,7 @@
              else if($vehicle['vin'] == "1GDB4T1T4HV596313") {
                  $image = "rav4.jpg";
              }
-             echo "<img src=images/$image alt=$image height='500' width='700'/>";
+             echo "<img src=images/$image alt=$image height='200' width='300'/>";
              
              echo "<form action='shoppingCart.php'>";
              echo  "<input type='hidden' name='vin' value=" . $vehicle['vin'] . ">";
