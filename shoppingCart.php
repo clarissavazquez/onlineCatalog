@@ -21,7 +21,10 @@
     </head>
     <link rel="stylesheet" href="includes/index.css" type="text/css" />
     <body>
-        <a href="https://cst336-clarissa-vazquez.c9users.io/onlineCatalog/index.php">Back to Main Catalog</a>
+        <a href="index.php">Back to Main Catalog</a>
+        <form>
+            <input type="submit" value="Empty Cart">
+        </form>
         <h1>Your Items:</h1>
         
     </body>
