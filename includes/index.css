@@ -40,6 +40,18 @@ table tr td {
     border-bottom-right-radius: 10px;
 }
 
+#radio {
+    content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.25em;
+  border-radius: 1em;
+  border: 0.125em solid #fff;
+  box-shadow: 0 0 0 0.15em #000;
+  margin-right: 0.75em;
+  transition: 0.5s ease all;
+}
 #search {
     background-color: #008CBA;
     border: none;
