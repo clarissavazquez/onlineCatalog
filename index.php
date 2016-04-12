@@ -40,7 +40,9 @@
         <link rel="stylesheet" href="includes/index.css" type="text/css" />
     </head>
     <body>
-        <a href="shoppingCart.php">Go to Shopping Cart</a>
+        <form action="shoppingCart.php">
+            <input id="mainButton" type="submit" name="main" value="Go to Shopping Cart">
+        </form>
         <h1>Online Catalog</h1>
         <form>
             <select id="select" name="orderBy">

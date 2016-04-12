@@ -22,7 +22,12 @@
         <link rel="stylesheet" href="includes/index.css" type="text/css" />
     </head>
     <body>
-        <a href="index.php">Back to Main Catalog</a>
+        <form action="shoppingCart.php">
+            <input id="mainButton" type="submit" name="main" value="Go to Shopping Cart">
+        </form>
+        <form action="index.php">
+            <input id="mainButton" type="submit" name="main" value="Back to Catalog">
+        </form>
         <h1>Vehicle Information</h1>
         <div id="description">
             <?= 

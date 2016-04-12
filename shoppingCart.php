@@ -1,6 +1,9 @@
 <?php
     session_start(); //starts or resumes an existing session
     $_SESSION['errors'] = array();
+    include("includes/database.php");
+
+    $dbConnection = getDatabaseConnection('auto_sale');
 
    if(!isset($_SESSION['vehicles'])) {
         $_SESSION['vehicles'] = array();
@@ -8,14 +11,12 @@
     
     if(isset($_GET['addToCart'])) { 
         array_push($_SESSION['vehicles'], $_GET['vin']);
-        print_r($_SESSION['vehicles']);
     }
     
     function emptyCart() {
         if(isset($_GET['emptyCart'])) {
             unset($_SESSION['vehicles']);
         }
-        print_r($_SESSION['vehicles']);
     }
     
     function getVehicleInfo($vin) {
@@ -35,15 +36,15 @@
     </head>
     <link rel="stylesheet" href="includes/index.css" type="text/css" />
     <body>
-        <a href="index.php">Back to Main Catalog</a>
-        <form>
-            <input id="emptyButton" type="submit" name='emptyCart' value="Empty Cart">
-        </form>
-        <?=emptyCart()?>
         
         <form action="index.php">
             <input id="mainButton" type="submit" name="main" value="Back to Catalog">
         </form>
+        
+        <form>
+            <input id="mainButton" type="submit" name='emptyCart' value="Empty Cart">
+        </form>
+        <?=emptyCart()?>
         <h1>Your Items:</h1>
 
         <?php
@@ -51,11 +52,11 @@
             $vins = $_SESSION['vehicles'];
             if(!empty($vins)) {
                 foreach($vins as $vin) {
-                    getVehicleInfo($vin);
+                    $vehicle = getVehicleInfo($vin);
                     echo "<tr>";
-                    echo "<td>" . $vin['make'] . "</td>";
-                    echo "<td>" . "<a href='vehicleInfo.php?vin=".$vin['vin']."'>" . $vin['model'] . "</a></td>";
-                    echo "<td>" . $vin['price'] . "</td>";
+                    echo "<td>" . $vehicle['make'] . "</td>";
+                    echo "<td>" . "<a href='vehicleInfo.php?vin=".$vehicle['vin']."'>" . $vehicle['model'] . "</a></td>";
+                    echo "<td>" . $vehicle['price'] . "</td>";
                     echo "<tr>";
                 }
                 echo "</table>";
