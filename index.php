@@ -65,7 +65,6 @@
          echo "<table border=1>";
          foreach ($allVehicles as $vehicle) {
              echo "<tr>";
-             echo "<a href='vehicleInfo.php?vin=".$vehicle['vin']."'>";
              echo "<td>" . $vehicle['make'] . "</td>";
              echo "<td>". "<a href='vehicleInfo.php?vin=".$vehicle['vin']."'>" . $vehicle['model'] . "</a></td>";
              echo "<td>" . $vehicle['year'] . "</td>";
