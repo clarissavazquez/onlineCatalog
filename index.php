@@ -3,10 +3,6 @@
     include("includes/database.php");
     $dbConnection = getDatabaseConnection('auto_sale');
     
-    function sortTable() {
-        
-    }
-    
     function getAllVehicles() {
         global $dbConnection;
         $sql = "SELECT *
