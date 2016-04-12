@@ -36,13 +36,14 @@
 <html>
     <head>
         <title>Online Catalog</title>
+        <link rel="stylesheet" href="includes/index.css" type="text/css" />
     </head>
     <body>
         <a href="https://cst336-clarissa-vazquez.c9users.io/onlineCatalog/shoppingCart.php">Go to Shopping Cart</a>
         <h1>Online Catalog</h1>
 
         <form>
-            <select name="orderBy">
+            <select id="select" name="orderBy">
                 <option value="make">Select One</option>
                 <option value="make">Make</option>
                 <option value="price">Price</option>
@@ -51,12 +52,11 @@
                 <option value="year">Year</option>
             </select>
             
-            <input type="radio" name="sortBy" value="ASC" id="ASC">  
+            <input id="radio"type="radio" name="sortBy" value="ASC" id="ASC">  
             <label for="ASC">Ascending</label>
-            <input type="radio" name="sortBy" value="DESC" id="DESC" checked> 
+            <input id="radio" type="radio" name="sortBy" value="DESC" id="DESC" checked> 
             <label for="DESC">Descending</label>
-            <br />
-            <input type="submit" value="Search Products" name = "searchForm">
+            <input id="search" type="submit" value="Search Products" name = "searchForm">
         </form>
         
         <?php
