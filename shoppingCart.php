@@ -17,6 +17,15 @@
         }
         print_r($_SESSION['vehicles']);
     }
+    
+    function getVehicleInfo($vin) {
+        global $dbConnection;
+        $sql = "SELECT * FROM vehicle WHERE vin = '$vin'";
+        $statement = $dbConnection->prepare($sql);
+        $statement->execute();
+        $records = $statement->fetch(PDO::FETCH_ASSOC);
+        return $records;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -36,6 +45,24 @@
             <input id="mainButton" type="submit" name="main" value="Back to Catalog">
         </form>
         <h1>Your Items:</h1>
-        
+
+        <?php
+            echo "<table border=1>";
+            $vins = $_SESSION['vehicles'];
+            if(!empty($vins)) {
+                foreach($vins as $vin) {
+                    getVehicleInfo($vin);
+                    echo "<tr>";
+                    echo "<td>" . $vin['make'] . "</td>";
+                    echo "<td>" . "<a href='vehicleInfo.php?vin=".$vin['vin']."'>" . $vin['model'] . "</a></td>";
+                    echo "<td>" . $vin['price'] . "</td>";
+                    echo "<tr>";
+                }
+                echo "</table>";
+            }
+            else 
+                echo "Empty shopping cart.";
+        ?>
+
     </body>
 </html>
