@@ -1,8 +1,6 @@
 <?php
     session_start(); //starts or resumes an existing session
     $_SESSION['errors'] = array();
-    print_r($_SESSION['vehicles']);
-    
     
 ?>
 
