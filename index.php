@@ -42,7 +42,6 @@
     <body>
         <a href="shoppingCart.php">Go to Shopping Cart</a>
         <h1>Online Catalog</h1>
-
         <form>
             <select id="select" name="orderBy">
                 <option value="make">Select One</option>
@@ -106,6 +105,7 @@
              }
              echo "<img src=images/$image alt=$image height='200' width='300'/>";
              
+             echo "<form action='shoppingCart.php'>";
              echo "<form>";
              echo  "<input type='hidden' name='vin' value=" . $vehicle['vin'] . ">";
             
