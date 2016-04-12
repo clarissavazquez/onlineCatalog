@@ -105,7 +105,7 @@
              }
              echo "<img src=images/$image alt=$image height='200' width='300'/>";
              
-             echo "<form action='test.php'>";
+             echo "<form action='shoppingCart.php'>";
              echo  "<input type='hidden' name='vin' value=" . $vehicle['vin'] . ">";
             
              echo  "<input type='submit' value='Add to Cart'>";
