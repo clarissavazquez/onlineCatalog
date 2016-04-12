@@ -56,7 +56,7 @@
                     echo "<tr>";
                     echo "<td>" . $vehicle['make'] . "</td>";
                     echo "<td>" . "<a href='vehicleInfo.php?vin=".$vehicle['vin']."'>" . $vehicle['model'] . "</a></td>";
-                    echo "<td>" . $vehicle['price'] . "</td>";
+                    echo "<td>$" . $vehicle['price'] . "</td>";
                     echo "<tr>";
                 }
                 echo "</table>";
