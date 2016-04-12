@@ -69,8 +69,7 @@
              echo "<td>" . $vehicle['type'] . "</td>";
              echo "<td>$" . $vehicle['price'] . "</td>";
              echo "<td>";
-             echo "<form action='shoppingCart.php'>";
-             echo  "<input type='hidden' name='vin' value=".$vehicle['vin'].">";
+            
              if($vehicle['vin'] == "1ZVBP8EN1A5169534") {
                  $image = "sonic.jpg";
              }
@@ -102,11 +101,15 @@
                  $image = "rav4.jpg";
              }
              echo "<img src=images/$image alt=$image height='500' width='700'/>";
+             
+             echo "<form action='shoppingCart.php'>";
+             echo  "<input type='hidden' name='vin' value=" . $vehicle['vin'] . ">";
+
              echo  "<input type='submit' value='Add to cart'>";
              echo "</form>";
              echo "</td>";
              
-
+            
              echo "</tr>";
          }
          echo "</table>"
